@@ -1,6 +1,18 @@
-<h2>Delete TODO</h2>
-<p>Are you sure you want to delete "{{ todo }}"?</p>
-<form method="POST">
-  {% csrf_token %}
-  <button type="submit">Yes, delete</button>
-</form>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-body text-center">
+
+        <h4>Are you sure you want to delete:</h4>
+        <p class="fw-bold">{{ todo }}</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit">Yes, Delete</button>
+            <a href="{% url 'todo_list' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
