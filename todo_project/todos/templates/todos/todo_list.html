@@ -1,0 +1,24 @@
+<h2>TODO List</h2>
+<a href="{% url 'todo_create' %}">Add new</a>
+
+<ul>
+  {% for todo in todos %}
+    <li>
+      <a href="{% url 'todo_toggle' todo.pk %}">
+        {% if todo.is_completed %}
+        ✔
+        {% else %}
+        ☐
+        {% endif %}
+      </a>
+
+      <strong>{{ todo.title }}</strong>
+      (Due: {{ todo.due_date|default:"No date" }})
+
+      <a href="{% url 'todo_edit' todo.pk %}">Edit</a>
+      <a href="{% url 'todo_delete' todo.pk %}">Delete</a>
+    </li>
+  {% empty %}
+    <p>No TODOs.</p>
+  {% endfor %}
+</ul>
