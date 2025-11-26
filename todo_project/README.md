@@ -6,8 +6,6 @@
 
 A clean, modern, user-friendly TODO application built with **Django**, styled with **Bootstrap 5**, and designed with the help of **ChatGPT** prompts to improve both layout and functionality.
 
-This project started as a simple learning exercise and turned into a polished, interactive task manager with features such as priorities, due dates, task editing, and smooth UI enhancements.
-
 ---
 
 ## ✨ Features
