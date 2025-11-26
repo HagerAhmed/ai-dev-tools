@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Todo, Category
 from .forms import TodoForm
 from django.db.models import Q
+from .models import Todo
 
 def home(request):
     search_query = request.GET.get("search", "")
