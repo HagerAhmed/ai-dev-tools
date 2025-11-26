@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Edit Task{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h4>Edit: "{{ todo.title }}"</h4>
+
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-primary w-100">Update</button>
+            </form>
+
+            <a href="/" class="btn btn-secondary w-100 mt-2">Cancel</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
